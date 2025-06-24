@@ -1,4 +1,4 @@
-# Notifi Js
+# Notifijs Js
 
 A lightweight and generic Observer pattern implementation in JavaScript using JSDoc type annotations. Ideal for decoupling logic and managing subscriptions to changes in your app.
 
@@ -12,7 +12,7 @@ A lightweight and generic Observer pattern implementation in JavaScript using JS
 ## Installation
 
 ```bash
-npm install notifi
+npm install notifijs
 ````
 
 Or if using directly in the browser, just copy the source file into your project.
