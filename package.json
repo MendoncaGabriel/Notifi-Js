@@ -1,0 +1,12 @@
+{
+  "name": "notifi",
+  "version": "1.0.0",
+  "description": "A lightweight and generic Observer pattern implementation in JavaScript using JSDoc type annotations. Ideal for decoupling logic and managing subscriptions to changes in your app.",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
