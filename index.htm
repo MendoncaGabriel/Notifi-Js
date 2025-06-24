@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Observer Pattern Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="index.js"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center p-6">
+    <h1 class="text-3xl font-bold mb-6 text-center">Observer Pattern in JavaScript</h1>
+
+    <button id="btn"
+        class="px-6 py-3 bg-blue-600 hover:bg-blue-700 transition-colors rounded-lg text-lg font-medium mb-6 shadow-lg">
+        Increment +1
+    </button>
+
+    <div class="bg-gray-800 p-6 rounded-lg shadow-md w-full max-w-md text-center">
+        <p class="text-lg mb-2">Current Value:</p>
+        <span id="result" class="text-4xl font-bold text-green-400 transition-all duration-300">0</span>
+
+        <hr class="my-4 border-gray-600" />
+
+        <p class="text-sm text-gray-400 mb-1">Change Log:</p>
+        <ul id="history" class="text-sm text-gray-300 space-y-1 max-h-32 overflow-y-auto">
+            <!-- history entries go here -->
+        </ul>
+    </div>
+
+
+    <script>
+        const btnSubject = Subject();
+        const btn = document.getElementById("btn");
+        const result = document.getElementById("result");
+        const history = document.getElementById("history");
+
+        let count = 0;
+
+        btnSubject.subscribe(value => {
+            result.textContent = value;
+            const item = document.createElement("li");
+            item.textContent = `Value changed to ${value}`;
+            history.prepend(item);
+        });
+
+        btn.addEventListener("click", () => {
+            count++;
+            btnSubject.notify(count);
+        });
+    </script>
+</body>
+</html>
