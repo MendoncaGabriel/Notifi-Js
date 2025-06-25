@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NotifiJs - Observer Pattern Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="index.js"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center p-6">
+
+  <header class="mb-8 text-center max-w-xl">
+    <h1 class="text-4xl font-extrabold mb-2">NotifiJs</h1>
+    <p class="text-gray-400 mb-4">A simple and lightweight Observer Pattern library for JavaScript</p>
+    <a href="https://github.com/MendoncaGabriel/Notifi-Js" target="_blank" rel="noopener" 
+       class="text-blue-400 hover:text-blue-600 underline font-semibold">
+    GitHub Repository
+    </a>
+    <span class="mx-2 text-gray-600">|</span>
+    <a href="https://www.npmjs.com/package/notifijs" target="_blank" rel="noopener" 
+       class="text-blue-400 hover:text-blue-600 underline font-semibold">
+      Npm
+    </a>
+  </header>
+
+  <main class="bg-gray-800 p-8 rounded-lg shadow-md w-full max-w-md text-center">
+    <p class="text-lg mb-3 font-semibold">Observer Pattern in JavaScript — Demo</p>
+
+    <button id="btn" 
+      class="px-6 py-3 bg-blue-600 hover:bg-blue-700 transition-colors rounded-lg text-lg font-medium mb-6 shadow-lg">
+      Increment +1
+    </button>
+
+    <div class="mb-6">
+      <p class="text-lg mb-1">Current Value:</p>
+      <span id="result" class="text-5xl font-bold text-green-400 transition-all duration-300">0</span>
+    </div>
+
+    <hr class="border-gray-600 mb-6" />
+
+    <section>
+      <p class="text-sm text-gray-400 mb-2">Change Log:</p>
+      <ul id="history" class="text-sm text-gray-300 space-y-1 max-h-40 overflow-y-auto no-scrollbar" style="scrollbar-width:none;">
+        <!-- history entries go here -->
+      </ul>
+    </section>
+  </main>
+
+  <footer class="mt-12 text-center text-gray-600 text-sm max-w-xl">
+    <p>Made with ❤️ by Gabriel Mendonça</p>
+    <p>
+      <a href="https://github.com/MendoncaGabriel/Notifi-Js" target="_blank" rel="noopener" class="underline hover:text-gray-400">
+        GitHub Repository
+      </a> &mdash; 
+      <a href="https://mendoncagabriel.github.io/Notifi-Js/" target="_blank" rel="noopener" class="underline hover:text-gray-400">
+        Live Demo
+      </a>
+    </p>
+  </footer>
+
+  <script>
+    const btnSubject = Subject();
+    const btn = document.getElementById("btn");
+    const result = document.getElementById("result");
+    const history = document.getElementById("history");
+
+    let count = 0;
+
+    btnSubject.subscribe(value => {
+      result.textContent = value;
+      const item = document.createElement("li");
+      item.textContent = `Value changed to ${value}`;
+      history.prepend(item);
+    });
+
+    btn.addEventListener("click", () => {
+      count++;
+      btnSubject.notify(count);
+    });
+  </script>
+
+</body>
+</html>
