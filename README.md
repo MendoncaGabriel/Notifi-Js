@@ -4,7 +4,7 @@ A **strongly-typed**, **lightweight**, and **zero-dependency** Observer Pattern 
 
 ---
 
-## 🚀 Features
+## Features
 
 - ✅ Fully typed with TypeScript generics
 - ✅ Extremely lightweight (no dependencies)
@@ -14,7 +14,7 @@ A **strongly-typed**, **lightweight**, and **zero-dependency** Observer Pattern 
 
 ---
 
-## 📦 Installation
+## Installation
 
 ```bash
 npm install notifijs
@@ -28,7 +28,7 @@ yarn add notifijs
 
 ---
 
-## 📚 Usage
+## Usage
 
 ```ts
 import { Subject } from 'notifijs';
@@ -51,7 +51,7 @@ counter.notify(3); // No output
 
 ---
 
-## 🧠 API Reference
+## API Reference
 
 ### `new Subject<T>()`
 
@@ -79,7 +79,7 @@ Returns the number of subscribed observers.
 
 ---
 
-## 💡 Use Cases
+## Use Cases
 
 * Reactivity in UI frameworks
 * Logging and analytics hooks
@@ -89,7 +89,7 @@ Returns the number of subscribed observers.
 
 ---
 
-## 🛠️ Development
+## Development
 
 ```bash
 git clone https://github.com/MendoncaGabriel/Notifi-Js.git
@@ -100,7 +100,7 @@ npm run build
 
 ---
 
-## 🔗 Links
+## Links
 
 * [🔗 GitHub Repository](https://github.com/MendoncaGabriel/Notifi-Js)
 * [📦 NPM Package](https://www.npmjs.com/package/notifijs)
@@ -112,7 +112,7 @@ npm run build
 
 **Gabriel Mendonça**
 Full-stack Developer | TypeScript Lover
-[LinkedIn](https://www.linkedin.com/in/gabriel-andrade-mendonca/) • [GitHub](https://github.com/MendoncaGabriel)
+[LinkedIn](https://www.linkedin.com/in/mendon%C3%A7agabriel/) • [GitHub](https://github.com/MendoncaGabriel)
 
 ---
 
