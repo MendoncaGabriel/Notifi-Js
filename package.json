@@ -1,6 +1,6 @@
 {
   "name": "notifijs",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A lightweight and generic Observer pattern implementation in JavaScript using JSDoc type annotations. Ideal for decoupling logic and managing subscriptions to changes in your app.",
   "license": "ISC",
   "author": "Gabriel Andrade",
