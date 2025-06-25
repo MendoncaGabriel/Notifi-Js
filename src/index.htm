@@ -58,21 +58,33 @@
     </p>
   </footer>
 
-  <script>
-    const btnSubject = Subject();
+  <script type="module">
+    import { Subject } from './index.js';
+
+    const btnSubject = new Subject();
+    
     const btn = document.getElementById("btn");
     const result = document.getElementById("result");
     const history = document.getElementById("history");
 
     let count = 0;
 
-    btnSubject.subscribe(value => {
+    
+    function updateTextContent(value){
       result.textContent = value;
+    }
+    
+    function addContentInList(value) {
       const item = document.createElement("li");
       item.textContent = `Value changed to ${value}`;
       history.prepend(item);
-    });
-
+    }
+    
+    btnSubject.subscribe(value => {
+      updateTextContent(value)
+      addContentInList(value)
+    })
+    
     btn.addEventListener("click", () => {
       count++;
       btnSubject.notify(count);

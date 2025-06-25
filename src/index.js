@@ -1,11 +1,8 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Subject = void 0;
 /**
  * Strongly-typed, efficient, and reusable Subject class implementing the Observer pattern.
  * Allows subscribing, unsubscribing, and notifying multiple observers.
  */
-class Subject {
+export class Subject {
     constructor() {
         this.observers = new Set();
     }
@@ -51,4 +48,3 @@ class Subject {
         return this.observers.size;
     }
 }
-exports.Subject = Subject;
